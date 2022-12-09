@@ -55,7 +55,6 @@ function page(body){
                 padding: 10px;
                 margin: auto;
                 border: 0px;
-                border: 0px;
                 background-color:lightpink;
                 border-radius: 20px;
                 font-family: Comic Sans MS;
