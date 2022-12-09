@@ -1,5 +1,5 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
-import * as render from './render.js'
+import * as render from './render_dic.js'
 
 const posts = [
     {id:0, title:'Final exam', time:"2022-01-03", body:'Start, Fighting!'},
@@ -9,9 +9,9 @@ const posts = [
 const router = new Router();
 
 router.get('/', list);
-router.get('/post/new', add);
-router.get('/post/:id', show);
-router.post('/post', create);
+router.get('/canlender/new', add);
+router.get('/canlender/:id', show);
+router.post('/canlender', create);
 
 const app = new Application();
 app.use(router.routes());
@@ -40,7 +40,7 @@ async function create(ctx) {
     for (const [key, value] of pairs) {
       post[key] = value
     }
-    console.log('post=', post)
+    console.log('canlender=', post)
     const id = posts.push(post) - 1;
     post.created_at = new Date();
     post.id = id;
