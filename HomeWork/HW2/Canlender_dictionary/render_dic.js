@@ -127,14 +127,14 @@ export function layout(title, content) {
       <li>
         <h2>${ post.title }</h2>
         <i>${ post.time}</i>
-        <p><a href="/canlender/${post.id}">Calender event</a></p>
+        <p><a href="/calender/${post.id}">Read Calender Event</a></p>
       </li>
       `)
     }
     let content = `
     <h1>Calendar</h1>
     <p>You have <strong>${posts.length}</strong> events!</p>
-    <p><a href="/canlender/new">Create a Calender</a></p>
+    <p><a href="/calender/new">Create a Calender</a></p>
     <ul id="posts">
       ${list.join('\n')}
     </ul>
@@ -146,7 +146,7 @@ export function layout(title, content) {
     return layout('New Post', `
     <h1>New event</h1>
     <p>Create new calender.</p>
-    <form action="/canlender" method="post">
+    <form action="/calender" method="post">
       <p><input class="text" placeholder="Title" name="title"></p>
       <p><input class="date" type="date" name="time"></p>
       <p><textarea placeholder="Contents" name="body"></textarea></p>
