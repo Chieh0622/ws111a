@@ -9,9 +9,9 @@ const posts = [
 const router = new Router();
 
 router.get('/', list);
-router.get('/canlender/new', add);
-router.get('/canlender/:id', show);
-router.post('/canlender', create);
+router.get('/calender/new', add);
+router.get('/calender/:id', show);
+router.post('/calender', create);
 
 const app = new Application();
 app.use(router.routes());
@@ -40,7 +40,7 @@ async function create(ctx) {
     for (const [key, value] of pairs) {
       post[key] = value
     }
-    console.log('canlender=', post)
+    console.log('calender=', post)
     const id = posts.push(post) - 1;
     post.created_at = new Date();
     post.id = id;
