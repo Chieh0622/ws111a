@@ -5,7 +5,6 @@ import { DB } from "https://deno.land/x/sqlite/mod.ts";
 const db = new DB("Calender.db");
 db.query("CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, time TEXT, body TEXT)");
 
-
 const router = new Router();
 const app = new Application();
 
